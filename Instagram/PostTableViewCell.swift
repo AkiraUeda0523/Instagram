@@ -47,7 +47,7 @@ class PostTableViewCell: UITableViewCell {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        self.commentLabel.text = ""
+        self.commentLabel.text = " "
         if let comment = postData.comment{
             
             self.commentLabel.text = "\(postData.name!) : \(comment)"
