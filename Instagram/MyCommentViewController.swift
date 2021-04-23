@@ -8,7 +8,7 @@ class MyCommentViewController: UIViewController {
     @IBOutlet weak var myCommentTextField: UITextField!
     
     
-   @IBOutlet weak var myCommentButton: UIButton!
+    @IBOutlet weak var myCommentButton: UIButton!
     
     var outputValue: PostData! = nil
     
@@ -19,13 +19,13 @@ class MyCommentViewController: UIViewController {
     }
     @IBAction func sendMyCommentButton(_ sender: Any) {
         
-//       print("comment_DEBUG_PRINT: sendMyCommentButtonが押されました。")
+        //       print("comment_DEBUG_PRINT: sendMyCommentButtonが押されました。")
         
         let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id)
         
         postRef.updateData(["comment": self.myCommentTextField.text as Any])
         
-
+        
         
         //SVProgressHUD.showSuccess(withStatus: self.myCommentTextField.text)
         
@@ -46,18 +46,18 @@ class MyCommentViewController: UIViewController {
         super.viewDidLoad()
         
         
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

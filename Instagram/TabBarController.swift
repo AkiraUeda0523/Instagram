@@ -9,7 +9,7 @@ import UIKit
 import Firebase // 先頭でFirebaseをimportしておく
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // タブアイコンの色
@@ -21,14 +21,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-         super.viewDidAppear(animated)
+        super.viewDidAppear(animated)
         
         // currentUserがnilならログインしていない
-               if Auth.auth().currentUser == nil {
-                   // ログインしていないときの処理
-                let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
-                            self.present(loginViewController!, animated: true, completion: nil)
-               }
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
     }
     // タブバーのアイコンがタップされた時に呼ばれるdelegateメソッドを処理する。
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
@@ -42,5 +42,5 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             return true
         }
     }
-
+    
 }

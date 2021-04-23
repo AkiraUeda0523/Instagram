@@ -53,7 +53,7 @@ class PostViewController: UIViewController {
     // キャンセルボタンをタップしたときに呼ばれるメソッド
     @IBAction func handleCancelButton(_ sender: Any) {
         // 加工画面に戻る
-               self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
