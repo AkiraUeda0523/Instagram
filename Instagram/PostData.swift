@@ -23,7 +23,7 @@ class PostData: NSObject {
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
-        
+        dump(document)
         let postDic = document.data()
         
         self.name = postDic["name"] as? String

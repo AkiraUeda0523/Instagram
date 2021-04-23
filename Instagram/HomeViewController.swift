@@ -31,6 +31,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Auth.auth().currentUser != nil {
             // ログイン済み
             if listener == nil {
+                Firestore.firestore().collectionGroup(Const.PostPath).getDocuments(completion: {_,_ in })
                 // listener未登録なら、登録してスナップショットを受信する
                 let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date", descending: true)
                 listener = postsRef.addSnapshotListener() { (querySnapshot, error) in

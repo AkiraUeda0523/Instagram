@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejl-lp-Afh">
-                        <rect key="frame" x="26" y="400" width="268" height="26.5"/>
+                        <rect key="frame" x="26" y="400" width="268" height="20.5"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -64,30 +64,25 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPc-yd-Dm8">
-                        <rect key="frame" x="26" y="436.5" width="268" height="20.5"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHx-gi-pad">
+                        <rect key="frame" x="26" y="430.5" width="268" height="26.5"/>
+                    </stackView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ejl-lp-Afh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="09C-8G-BOs"/>
                     <constraint firstItem="udL-oq-UVE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0Pt-h7-8No"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ZPc-yd-Dm8" secondAttribute="trailing" constant="10" id="1Vo-0O-qmy"/>
                     <constraint firstAttribute="trailing" secondItem="udL-oq-UVE" secondAttribute="trailing" constant="10" id="3xr-nt-4Of"/>
                     <constraint firstItem="dEP-Na-zGF" firstAttribute="leading" secondItem="WhH-Sm-8Ul" secondAttribute="trailing" constant="10" id="5co-tQ-EGb"/>
-                    <constraint firstItem="ZPc-yd-Dm8" firstAttribute="top" secondItem="ejl-lp-Afh" secondAttribute="bottom" constant="10" id="6cl-wt-XTe"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ZPc-yd-Dm8" secondAttribute="bottom" constant="50" id="9aY-Vc-UK4"/>
                     <constraint firstItem="nDk-T2-rSB" firstAttribute="centerY" secondItem="dEP-Na-zGF" secondAttribute="centerY" id="DSC-W2-Smz"/>
-                    <constraint firstItem="ZPc-yd-Dm8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Ls7-il-bd6"/>
+                    <constraint firstItem="bHx-gi-pad" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="J23-X4-Xuw"/>
                     <constraint firstItem="z7W-26-j9N" firstAttribute="leading" secondItem="nDk-T2-rSB" secondAttribute="trailing" constant="10" id="NOQ-15-SJC"/>
                     <constraint firstItem="z7W-26-j9N" firstAttribute="centerY" secondItem="dEP-Na-zGF" secondAttribute="centerY" id="UCP-jW-bvp"/>
-                    <constraint firstItem="ZPc-yd-Dm8" firstAttribute="top" secondItem="ejl-lp-Afh" secondAttribute="bottom" constant="10" id="Wvt-8P-AuI"/>
                     <constraint firstItem="WhH-Sm-8Ul" firstAttribute="top" secondItem="udL-oq-UVE" secondAttribute="bottom" constant="10" id="Z5j-0G-geR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bHx-gi-pad" secondAttribute="bottom" constant="50" id="Zbu-ej-01Y"/>
+                    <constraint firstItem="bHx-gi-pad" firstAttribute="top" secondItem="ejl-lp-Afh" secondAttribute="bottom" constant="10" id="dw5-4p-6ab"/>
                     <constraint firstItem="udL-oq-UVE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lkQ-O2-aT8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ejl-lp-Afh" secondAttribute="trailing" constant="10" id="oER-Av-inD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bHx-gi-pad" secondAttribute="trailing" constant="10" id="pH4-O1-1Tc"/>
                     <constraint firstItem="ejl-lp-Afh" firstAttribute="top" secondItem="WhH-Sm-8Ul" secondAttribute="bottom" constant="50" id="rZy-u6-EuE"/>
                     <constraint firstItem="WhH-Sm-8Ul" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="wD0-5d-Ivu"/>
                     <constraint firstItem="nDk-T2-rSB" firstAttribute="leading" secondItem="dEP-Na-zGF" secondAttribute="trailing" constant="20" id="xRP-3X-5P1"/>
@@ -98,7 +93,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="ejl-lp-Afh" id="RYb-13-JyD"/>
-                <outlet property="commentLabel" destination="ZPc-yd-Dm8" id="NE9-k5-2JM"/>
+                <outlet property="commentStackView" destination="bHx-gi-pad" id="igs-nQ-TRw"/>
                 <outlet property="createMyCommentButton" destination="nDk-T2-rSB" id="0ft-ol-rXi"/>
                 <outlet property="dateLabel" destination="z7W-26-j9N" id="nkS-S3-thP"/>
                 <outlet property="likeButton" destination="WhH-Sm-8Ul" id="GKK-IT-TZU"/>

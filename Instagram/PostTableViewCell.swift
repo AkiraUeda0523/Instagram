@@ -18,9 +18,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
+  
     @IBOutlet weak var createMyCommentButton: UIButton!
     
+    @IBOutlet weak var commentStackView: UIStackView!
     
     @IBAction func createMyCommentButton(_ sender: Any) {
         
@@ -47,10 +48,10 @@ class PostTableViewCell: UITableViewCell {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        self.commentLabel.text = " "
+//        self.commentLabel.text = " "
         if let comment = postData.comment{
             
-            self.commentLabel.text = "\(postData.name!) : \(comment)"
+//            self.commentLabel.text = "\(postData.name!) : \(comment)"
         }
         
         // 日時の表示

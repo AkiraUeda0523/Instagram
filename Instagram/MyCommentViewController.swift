@@ -21,9 +21,11 @@ class MyCommentViewController: UIViewController {
         
         //       print("comment_DEBUG_PRINT: sendMyCommentButtonが押されました。")
         
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id)
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(outputValue.id).collection("comments").document()
         
-        postRef.updateData(["comment": self.myCommentTextField.text as Any])
+        
+        
+        postRef.setData(["comment": self.myCommentTextField.text as Any,"name": Auth.auth().currentUser!.displayName])
         
         
         
@@ -33,10 +35,10 @@ class MyCommentViewController: UIViewController {
         
         SVProgressHUD.showSuccess(withStatus: "投稿しました")
         
-        let storyboard: UIStoryboard = self.storyboard!
-        let Home = storyboard.instantiateViewController(withIdentifier: "Home")
-        
-        self.present(Home, animated: true, completion: nil)
+//        let storyboard: UIStoryboard = self.storyboard!
+//        let Home = storyboard.instantiateViewController(withIdentifier: "Home")
+        self.dismiss(animated: true, completion: nil)
+//        self.present(Home, animated: true, completion: nil)
         
         
         
